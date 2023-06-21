@@ -9,12 +9,7 @@ interface TotalPriceArgs {
 const totalPrice = ({ price, discount, isInstallment, months }:TotalPriceArgs): number => {
     let res:number
 
-    if(isInstallment) {
-        return res = (price - (price * Number(`0.${discount}`))) / months
-    } else {
-        return res = (price - (price * Number(`0.${discount}`))) / months
-    }
-
+    return isInstallment ? res = (price - (price * Number(`0.${discount}`))) / months : res = price
 };
 
 console.log(totalPrice({ price: 100000, discount: 25, isInstallment: true, months: 12 }));
